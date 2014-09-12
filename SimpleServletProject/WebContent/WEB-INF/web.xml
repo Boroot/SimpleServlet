@@ -3,16 +3,6 @@
   <display-name>SimpleServletProject</display-name>
   <!-- Xml Servlet -->
   <servlet>
-      <servlet-name>XmlServlet</servlet-name>
-      <servlet-class>si.boroot.XmlServlet</servlet-class> 		
-  </servlet>
-  <servlet-mapping>
-      <servlet-name>XmlServlet</servlet-name>
-      <url-pattern>/XmlServletpath</url-pattern>
-  </servlet-mapping>
- 
- <!-- Simple Servlet -->
-  <servlet>
       <servlet-name>SimpleServlet</servlet-name>
       <servlet-class>si.boroot.SimpleServlet</servlet-class> 		
   </servlet>
