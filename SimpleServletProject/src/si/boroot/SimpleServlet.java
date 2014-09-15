@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,8 +14,11 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class SimpleServlet
  */
-// @WebServlet(description = "A simple servlet", urlPatterns = { "/AdvancedServlet" })
-public class SimpleServlet extends HttpServlet {
+ @WebServlet(description = "A simple servlet", urlPatterns = { "/AdvancedServlet" })
+		/*nastavi privzeto vrednost parametra defaultUser */
+		// initParams={@WebInitParam (name="defaultUser", value="John Doe")})
+
+ public class SimpleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -40,5 +44,6 @@ public class SimpleServlet extends HttpServlet {
 		ven.println("Request parameter ima username " +userName);
 		ven.println("Session parameter ima username " +(String) seja.getAttribute("savedUserName"));
 		ven.println("Context parameter ima username "+(String) context.getAttribute("savedUserName"));
+		//ven.println("Init ima privzet username "+this.getServletConfig().getInitParameter("defaultUser"));
 	}
 }
